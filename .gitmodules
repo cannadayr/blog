@@ -1,0 +1,3 @@
+[submodule "bencharray"]
+	path = bencharray
+	url = https://github.com/mlochbaum/bencharray.git
