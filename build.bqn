@@ -5,5 +5,5 @@ Favicon ← {𝕊@:
   path ← 'Z'∾˜∾⥊(('M')∾(6-1)⥊'L')∾˘((∾○(↕≠)⍋⊸⊏∾)⟜' '˜)˘svg.Num ⍉vert
   0‿0‿32‿32 svg.SVG "fill=#fff|stroke=#333|stroke-width=1" svg.Ge svg.Path path
 }
-"public/favicon.svg" •file.Bytes Favicon @
+"docs/favicon.svg" •file.Bytes Favicon @
 
