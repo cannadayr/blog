@@ -159,7 +159,7 @@ _getCodeExec ← {𝕗⋄NewREPL@}
 _getSvgExec ← {𝕗
   e←NewREPL@
   ⟨"","",GetHighlights‿Modify‿E⟩ E "GetHighlights‿Modify‿Eval←•args"
-  E •file.Chars "svg.bqn"
+  E •file.Chars "svg_bqn.bqn"
   JoinLines⍟(1<≡)∘E
 }
 
@@ -708,7 +708,7 @@ ConvertFile ← {
   fileout ← ".html" ∾˜ (¯6⊸↓∾"index"˙)⍟("README"⊸MatchEnd) ¯3↓𝕩
 
   # Contents of file to convert
-  md ← •file.Lines 𝕩
+  md ← •file.Lines (•file.Parent •path) •file.At 𝕩
   # Verify and remove the html link line: the output *is* the html file.
   IsView ← "*View this file"⊸MatchStart ∧ (siteURL∾fileout∾").*")⊸MatchEnd
   ⟨"File ",𝕩," has missing or incorrect view link"⟩ ∾⊸! IsView ⊑md
@@ -732,7 +732,7 @@ ConvertFile ← {
   crumbs ← up ("a href='"∾∾⟜"index.html'")⊸Html¨○((-isInd)⊸↓) (<"BQN")»parts
   nav ← RQ "div class='nav'" Html 3↓∾ " / "⊸∾¨ repo <⊸∾ crumbs
   front ← head ∾○(∾⟜lf) nav
-  ("docs/"∾fileout) •file.Chars front ∾ out
+  ((•file.Parent •path) •file.At "docs/"∾fileout) •file.Chars front ∾ out
 }
 
 ConvertFile¨ •args
