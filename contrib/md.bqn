@@ -148,9 +148,9 @@ Base64 ← {
 }
 
 # Various URLs
-siteURL ← "https://mlochbaum.github.io/BQN/"
+siteURL ← "https://cannadayr.github.io/"
 tryURL  ← siteURL∾"try.html#code="
-repoURL ← "https://github.com/mlochbaum/BQN"
+repoURL ← "https://github.com/cannadayr/cannadayr.github.io"
 blobURL ← repoURL∾"/blob/master/"
 
 # Environments
@@ -724,12 +724,12 @@ ConvertFile ← {
   "Wrong number of titles in "‿𝕩 ∾⊸! 1=≠h1
   head ← "head" Html lf∾JoinLines "  "⊸∾¨⟨
     RQ "<meta charset='utf-8'>"
-    "shortcut icon' type='image/x-icon" Link "favicon.ico"
+    "shortcut icon' type='image/x-icon" Link "favicon.svg"
     "stylesheet" Link "style.css"
-    "title" Html ("BQN"∾":"⊸(¬∘∊/⊣)∾" "∾⊢)⍟(¬·∨´"BQN"⍷⊢) Clean 2↓⊑h1
+    "title" Html ("MyBlog"∾":"⊸(¬∘∊/⊣)∾" "∾⊢)⍟(¬·∨´"MyBlog"⍷⊢) Clean 2↓⊑h1
   ⟩
   repo ← "("∾")"∾˜ "a href='"‿repoURL‿"'" ∾⊸Html "github"
-  crumbs ← up ("a href='"∾∾⟜"index.html'")⊸Html¨○((-isInd)⊸↓) (<"BQN")»parts
+  crumbs ← up ("a href='"∾∾⟜"index.html'")⊸Html¨○((-isInd)⊸↓) (<"MyBlog")»parts
   nav ← RQ "div class='nav'" Html 3↓∾ " / "⊸∾¨ repo <⊸∾ crumbs
   front ← head ∾○(∾⟜lf) nav
   ((•file.Parent •path) •file.At "docs/"∾fileout) •file.Chars front ∾ out

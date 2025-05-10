@@ -1,4 +1,5 @@
-svg ← •Import "bencharray/plot/svg.bqn"
+#!/usr/bin/env bqn
+svg ← •Import "contrib/svg_bencharray.bqn"
 
 Favicon ← {𝕊@:
   vert ← 16‿16+˘15×((•math.Sin+⟜(0))≍(•math.Cos+⟜(π)))6÷˜2×π×↕6
@@ -6,4 +7,6 @@ Favicon ← {𝕊@:
   0‿0‿32‿32 svg.SVG "fill=#fff|stroke=#333|stroke-width=1" svg.Ge svg.Path path
 }
 "docs/favicon.svg" •file.Bytes Favicon @
+"docs/doc/favicon.svg" •file.Bytes Favicon @
 
+⟨"doc/ahoy.md"⟩ •Import "contrib/md.bqn"
